@@ -1,0 +1,79 @@
+/* body{
+    height: 100%;
+    width: 100%;
+    /* background-image: url("https://i2.wp.com/rbms.info/wp-content/uploads/revslider/home/special-collections-books-700x300.jpg?fit=700%2C300"); */
+    
+   
+    /* @media (min-width: 768px) { #home{
+        margin-left: 10%
+    }} */
+
+    /* Medium devices (desktops, 992px and up) */
+    /* @media (min-width:992px) { #home{
+        margin-left: 20%
+    }} */
+    
+    /* Large devices (large desktops, 1200px and up) */
+    /* @media (min-width: 1200px) { #home{
+        margin-left: 20%
+    } } */
+    @media screen and (orientation: portrait) {
+        img.ri { max-width: 90%; }
+      }
+      
+      @media screen and (orientation: landscape) {
+        img.ri { max-height: 90%; }
+      }
+
+      /* #home,#profile{
+           margin-left: 20%; 
+      } */
+
+
+
+:host
+{
+    height: 100%;
+}
+table,tr,td{
+    border: 3px double black;
+}
+    
+a{
+    color: aqua;
+    font-size: 16px;
+    font-weight: bold;
+}
+#head1{
+    height: 50px;
+}
+#head2{
+    height: 70px;
+    
+}
+
+
+
+
+.wrap
+{
+    padding-top: 30px;
+}
+
+.glyphicon
+{
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+small
+{
+    display: block;
+    color: #888;
+}
+
+.well
+{
+    border: 1px solid blue;
+}
+

@@ -1,0 +1,365 @@
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+<body>
+ 
+  <div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+           
+        <ul class="nav nav-tabs">
+        
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>
+        
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#profile1">User Account</a>
+        
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Log Out</a>
+          </li>
+        
+          <li>
+            <input type="text" class="form-control" placeholder="Search" [(ngModel)]= "term" >
+          </li>
+          
+        </ul>
+        </div>
+        </div>
+        </nav>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+   
+  </div>
+  
+
+
+
+<div id="myTabContent" class="tab-content" id="ab">
+  <div class="tab-pane fade show active" id="home">
+      <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-8 ">
+              <div *ngFor="let book of books | filter : term :'Book_name'" class="card bg-light mb-3" id="a">
+                  <div class="card text-white bg-dark mb-3" id="head1"><h3>{{book.Book_name}}</h3></div>
+                  <div class="card-body">
+                      <img src={{book.Book_Image}} height="150px" width="120px" class="img-rounded" alt="Cinque Terre">
+
+                    <h4  class="card-title"></h4>
+                    <h5 class="card-text">Book Author :- </h5><p class="card-text">{{book.Book_Author}}</p>
+                    <h5 class="card-text">Book Description : </h5><p>{{book.Book_Description}}</p>
+                    <div class="center"><button data-toggle="modal" data-target="#abcd" [ngClass]="{'btn-add': !clicked, 'btn-remove': clicked}" class="btn btn-success center-block" (click)="change(book)" > {{clicked ? 'Ordered' : 'Order Book'}}</button></div>
+                    <!-- <div class="alert alert-success" id="abcd">
+                        <div class="center"><button data-toggle="modal" data-target="#abcd" [ngClass]="{'btn-add': !clicked, 'btn-remove': clicked}" class="btn btn-success center-block" (click)="change(book)" > {{clicked ? 'Ordered' : 'Order Book'}}</button></div>
+                      <strong>Success!</strong> Indicates a successful or positive action.
+                    </div> -->
+                    <!-- <button class="btn" [ngClass]="{'btn-add': !clicked, 'btn-remove': clicked}" data-target="#squarespaceModal" (click)="clicked = !clicked">
+                      {{clicked ? 'Ordered' : 'Order Book'}}
+                      <i class="fa" [ngClass]="{'fa-plus-circle': !clicked, 'fa-minus-circle': clicked}"></i>
+                  </button>      -->
+                  <!-- <div class="center"><button data-toggle="modal"  class="btn btn-success center-block" (click)="transform()" > Click</button></div> -->
+                  </div>
+                </div>
+          </div>
+          <div class="col-md-2"></div>
+       
+    
+  </div>
+   
+ 
+    
+</div>
+
+
+ 
+
+
+  <div class="tab-pane fade" id="profile" >
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <div *ngIf="name" class="card text-white bg-info mb-3" id="a">
+            <div   class="card text-white bg-dark mb-3" id="head2"><h1>{{name}}</h1></div>
+            <div class="card-body">
+              <h4  class="card-title"></h4>
+              <h5 *ngIf="user" class="card-text">Username :- </h5><p class="card-text">{{user}}</p>
+              <h5 *ngIf="address" class="card-text">Delivery Address :- </h5><p class="card-text">{{address}}</p>
+              <h5 *ngIf="mobile" class="card-text">Mobile No. :- </h5><p class="card-text">{{mobile}}</p>
+
+              <!-- <h5 *ngIf="book1" class="card-text">Ordered book :- </h5><p class="card-text">{{book1}}</p>
+              <h5 *ngIf="date1" class="card-text">Ordered Date :- </h5><p class="card-text">{{date1}}</p>
+              <h5 *ngIf="date2" class="card-text">Delivery  Date :- </h5><p class="card-text">{{date2}}</p> -->
+              <!-- <table >
+                <tr>
+                  <td><h4>Ordered Book</h4></td>
+                  <td><h4>Ordered Date</h4></td>
+                  <td><h4>Delivery date</h4></td>
+                </tr>
+                <tr>
+                  <td *ngIf="book1">{{book1}}</td>
+                
+                
+                    <td *ngIf="date1">{{date1}}</td>
+                  
+                  
+                      <td *ngIf="date2">{{date2}}</td>
+                    
+                </tr>
+              </table> -->
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">Ordered Book</th>
+                    <th scope="col">Ordered Date</th>
+                    <th scope="col">Delivery date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    
+                    <td *ngIf="book1">{{book1}}</td>
+                
+                
+                    <td *ngIf="date1">{{date1}}</td>
+                  
+                  
+                      <td *ngIf="date2">{{date2}}</td>
+                  </tr>
+                
+                   
+                </tbody>
+              </table>
+
+
+              
+
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2"></div> 
+     
+  
+</div>
+ 
+
+  
+</div>
+
+<div class="tab-pane fade" id="profile1" >
+  <div class="row">
+      <div class="col-md-3"> </div>
+      <div class="col-md-6">
+        <div *ngIf="name" class="card text-white bg-info mb-3" id="a">
+          <div   class="card text-white bg-dark mb-3" id="head2"><h1>{{name}}</h1></div>
+          <div  class="card-body">
+            <h4  class="card-title"></h4>
+            <h5 *ngIf="balance" class="card-text">Account Balance :- </h5><p class="card-text">{{balance}}</p>
+            <h5  class="card-text">Updated Balance :- </h5><p class="card-text">{{c}}</p>
+
+            <div class="center"><button data-toggle="modal" data-target="#squarespaceModal" [ngClass]="{'btn-add': !clicked, 'btn-remove': clicked}" class="btn btn-success center-block">Add Money from Bank</button></div>
+
+            <!-- <h5 *ngIf="book1" class="card-text">Ordered book :- </h5><p class="card-text">{{book1}}</p>
+            <h5 *ngIf="date1" class="card-text">Ordered Date :- </h5><p class="card-text">{{date1}}</p>
+            <h5 *ngIf="date2" class="card-text">Delivery  Date :- </h5><p class="card-text">{{date2}}</p> -->
+            <!-- <table >
+              <tr>
+                <td><h4>Ordered Book</h4></td>
+                <td><h4>Ordered Date</h4></td>
+                <td><h4>Delivery date</h4></td>
+              </tr>
+              <tr>
+                <td *ngIf="book1">{{book1}}</td>
+              
+              
+                  <td *ngIf="date1">{{date1}}</td>
+                
+                
+                    <td *ngIf="date2">{{date2}}</td>
+                  
+              </tr>
+            </table> -->
+            
+
+            
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3"> </div>
+   
+
+</div>
+
+
+
+</div>
+
+</div>
+
+
+
+<!-- <div class="container" id="profile">    
+  <div class="row">
+      <div class="panel panel-default">
+      <div class="panel-heading">  <h4 >User Profile</h4></div>
+       <div class="panel-body">
+      <div class="col-md-4 col-xs-6 col-sm-6 col-lg-4">
+       <img alt="User Pic" src="https://x1.xingassets.com/assets/frontend_minified/img/users/nobody_m.original.jpg" id="profile-image1" class="img-circle img-responsive"> 
+     
+ 
+      </div>
+      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8" >
+          <div class="container" >
+            <h2>John Doe</h2>
+            <p>an   <b> Employee</b></p>
+          
+           
+          </div>
+           <hr>
+          <ul class="container details" >
+            <li><p><span class="glyphicon glyphicon-user one" style="width:50px;"></span>i.rudberg</p></li>
+            <li><p><span class="glyphicon glyphicon-envelope one" style="width:50px;"></span>somerandom@email.com</p></li>
+          </ul>
+          <hr>
+          <div class="col-sm-5 col-xs-6 tital " >Date Of Joining: 15 Jun 2016</div>
+      </div>
+</div>
+</div>
+</div>
+
+
+</div> -->
+<!-- 
+<div class="container wrap" id="profile">
+  <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-6 col-md-offset-3">
+          <div class="well well-sm">
+              <div class="row">
+                  <div class="col-sm-4 col-md-6 col-lg-7">
+                      <img src="http://placehold.it/300x200" alt="" class="img-rounded img-responsive" />
+                  </div>
+                  <div class="col-sm-8 col-md-6 col-lg-5">
+                      <h4>Abraham Lincoln</h4>
+                      <small><cite title="San Diego, USA">San Diego, USA <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+                      <p>
+                          <i class="glyphicon glyphicon-envelope"></i>lorem@random.net
+                          <br />
+                          <i class="glyphicon glyphicon-globe"></i><a href="https://www.prepbootstrap.com">www.prepbootstrap.com</a>
+                          <br />
+                          <i class="glyphicon glyphicon-gift"></i>January 19, 1993
+                      </p>
+                      <div class="btn-group">
+                          <a href="#" class="btn btn-primary"><span class="fa fa-2x fa-facebook"></span></a>
+                          <a href="#" class="btn btn-danger"><span class="fa fa-2x fa-google"></span></a>
+                          <a href="#" class="btn btn-info"><span class="fa fa-2x fa-twitter"></span></a>
+                          <a href="#" class="btn btn-primary"><span class="fa fa-2x fa-linkedin"></span></a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div> -->
+
+
+
+<div class="modal fade" id="squarespaceModal1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			
+			<h3 class="modal-title" id="lineModalLabel">Enter Delivery address</h3>
+		</div>
+		<div class="modal-body">
+			
+            <!-- content goes here -->
+			<form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Lane 1</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Lane 1 address">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Lane 2</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Lane 2 address">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Lane 3</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter Lane 3 address">
+              </div>
+            
+            
+              
+         
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+
+		</div>
+		<div class="modal-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="group button">
+				<div class="btn-group" role="group">
+					<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h3 class="modal-title" id="lineModalLabel">Add a money</h3>
+      </div>
+      <div class="modal-body">
+        
+              <!-- content goes here -->
+        <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1" *ngIf="bank"><h4>Bank Name :- </h4>{{bank}}</label>
+                  
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Enter Amount :- </label>
+                  <input type="text" class="form-control" [(ngModel)]="user1.amount"  [ngModelOptions]="{standalone: true}" id="exampleInputEmail1" placeholder="Amount">
+                </div>
+              
+              
+                
+           
+                <button type="submit" class="btn btn-default" (click)="addMoney(user1)">Add</button>
+              </form>
+  
+      </div>
+      <div class="modal-footer">
+        <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+          </div>
+          
+          
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+
+</body>

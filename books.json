@@ -1,0 +1,4 @@
+{ "_id" : { "$oid" : "5acee7537f232b4ebb3045c5" }, "name" : "Packing of Mars1", "author" : "Mary Roach", "publisher" : "Oneworld Publications", "price" : 1414 }
+{ "_id" : { "$oid" : "5acee93c7f232b4ebb3045c6" }, "name" : "Packing of Mars", "author" : "Mary Roach", "publisher" : "Oneworld Publications", "price" : "1412" }
+{ "_id" : { "$oid" : "5ad73a05f42a37286860739b" }, "name" : "Longitude9", "author" : "Dava Sobel9", "publisher" : "Harpercollins Audio9", "price" : 13009, "created_date" : { "$date" : "2018-04-18T12:28:53.943+0000" }, "__v" : 0 }
+{ "_id" : { "$oid" : "5ae15ae50c68551370fafd6d" }, "name" : "Longitude9", "author" : "Dava Sobel9", "publisher" : "Harpercollins Audio9", "price" : 13009, "created_date" : { "$date" : "2018-04-26T04:51:49.572+0000" }, "__v" : 0 }
