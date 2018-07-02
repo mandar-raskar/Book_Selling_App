@@ -7,6 +7,8 @@ var cors = require("cors");
 var Request = require("request");
 var fetchUrl = require("fetch").fetchUrl;
 var fetch = require('node-fetch');
+const request = require('request');
+
 
 
 var indexRouter = require('./routes/index');
@@ -50,7 +52,9 @@ console.log('hiiiiiiiiii');
 // catch 404 and forward to error handler
 
 
-
+request('http://localhost:3004/locations', function(err, res, body) {  
+    console.log(body);
+})
 
 
 
